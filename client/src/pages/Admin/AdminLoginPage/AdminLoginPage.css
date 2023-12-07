@@ -1,0 +1,26 @@
+.LoginWrapper{
+    /* background-color: rgb(0, 255, 55); */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.login_form_container{
+    width: 410px;
+    /* background-color: aqua; */
+
+    
+}
+.loginTxtOtp{
+    color: blue;
+    cursor: pointer;
+    text-align: center;
+    /* background-color: aqua; */
+
+}
+.login_err{
+color: red;
+    margin-bottom: 30px;
+    text-align: center;
+}

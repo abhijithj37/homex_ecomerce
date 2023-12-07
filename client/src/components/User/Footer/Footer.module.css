@@ -1,0 +1,103 @@
+.footer_container {
+  padding: 10px;
+  /* background-color: aqua; */
+}
+.footer {
+  /* background-color: rgb(226, 98, 98); */
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  min-height: 400px;
+  align-items: center;
+}
+.footer_item {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+  /* background-color: aqua; */
+  width: 100%;
+}
+.footer_main_head {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 10px;
+  line-height: 40px;
+}
+.footer_head {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.footer_liks_text{
+  font-weight: 400;
+  line-height: 23px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+.footer_liks {
+  font-weight: 400;
+  line-height: 40px;
+  cursor: pointer;
+}
+.email_container {
+  position: relative;
+  /* background-color: aliceblue; */
+  width: fit-content;
+}
+.send_btn {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  cursor: pointer;
+}
+.email_text {
+  font-weight: 400;
+  margin-top: 20px;
+}
+.email_input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 300px;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 17px;
+  /* background-color: antiquewhite; */
+}
+
+.text_copyright {
+  text-align: center;
+  font-weight: 400;
+  font-size: 13px;
+}
+@media only screen and (max-width: 900px) {
+  .footer {
+    text-align: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footer_item {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+  }
+  .footer_main_head {
+    line-height: 35px;
+  }
+
+  .footer_liks {
+    line-height: 33px;
+  }
+  .email_input {
+    width: 330px;
+    /* background-color: rgb(107, 74, 31); */
+  }
+  .email_container{
+    text-align: center;
+    /* background-color: rebeccapurple; */
+    width: 100%;
+  }
+  
+}

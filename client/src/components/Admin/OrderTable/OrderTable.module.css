@@ -1,0 +1,59 @@
+.table_container_order{
+  padding-right: 10px;
+}
+.expand_row {
+  border: 1px solid var(--admin-main-color);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* 
+.customPopconfirm {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .popconfirmContent {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1;
+  }
+  
+  .customPopconfirm:hover .popconfirmContent {
+    display: block;
+  }
+  
+  .customSelect {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .customButton {
+    background-color: #1890ff;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  .customButton:hover {
+    background-color: #40a9ff;
+  } */
+.select {
+  width: 100px;
+  height: 33px;
+  border-radius: 5px;
+  border: 1px solid rgba(171, 171, 171, 0.321);
+}
+
+@media only screen and (max-width: 700px) {
+  .table_container_order{
+    padding-right: 60px;
+  }
+}

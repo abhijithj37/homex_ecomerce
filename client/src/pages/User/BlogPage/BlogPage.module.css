@@ -1,0 +1,24 @@
+
+.blogs_cotainer {
+  max-width: 1600px;
+  margin: auto;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-right: 10px;
+
+}.heading {
+  font-weight: 400;
+  text-align: center;
+  padding: 30px;
+  font-size: 22px;
+}
+.heading_span {
+  color: var(--main-text-color);
+}
+.create_account_container {
+  background-color: var(--main-background-color-light-gray);
+  padding-bottom: 40px;
+}
+

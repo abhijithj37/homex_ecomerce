@@ -1,0 +1,40 @@
+
+.blogs_cotainer {
+    max-width: 1600px;
+    margin: auto;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-right: 10px;
+  
+  }.heading {
+    font-weight: 400;
+    text-align: center;
+    padding: 30px;
+    font-size: 22px;
+  }
+
+  .heading_span {
+    color: var(--main-text-color);
+  }
+  .create_account_container {
+    background-color: var(--main-background-color-light-gray);
+    padding-bottom: 40px;
+  }
+  
+  
+  .about_us{
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+  .homex_o{
+    color: var(--main-text-color);
+  }
+  .sub_heading{
+    font-weight: 400;
+    text-align: center;
+    padding: 30px;
+    font-size: 18px;
+  }

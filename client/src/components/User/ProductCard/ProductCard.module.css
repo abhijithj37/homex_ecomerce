@@ -1,0 +1,76 @@
+.productCard_contaier {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 180px;
+  min-height: 280px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+
+}
+.newProduct_container{
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 220px;
+  height: 300px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+
+  
+}
+
+.product_link{
+  text-decoration: none;
+  color: rgb(47, 47, 47);
+}
+.product_image {
+  width: 90px;
+  margin-bottom: 0px;
+
+  /* background-color: rebeccapurple; */
+
+}
+.product_name {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+}
+.product_disc {
+  text-transform: uppercase;
+  font-size: 9px;
+  color: rgb(76, 76, 76);
+  font-weight: 300px;
+  width: 130px;
+}
+.product_price {
+  font-size: 15px;
+  color: var(--main-text-color);
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  /* align-items: end; */
+  align-items: center;
+  gap: 4px;
+  /* background-color: rebeccapurple; */
+}
+
+@media only screen and (max-width: 900px) {
+  .productCard_contaier {
+    width: 120px;
+    height: 270px;
+  }
+  .product_image {
+    max-width: 80px;
+    margin-bottom: 8px;
+  }
+}

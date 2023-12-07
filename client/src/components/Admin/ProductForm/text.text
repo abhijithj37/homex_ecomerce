@@ -1,0 +1,328 @@
+import React, { useState } from "react";
+import {
+  Form,
+  Input,
+  Select,
+  InputNumber,
+  Switch,
+  Upload,
+  message,
+  Button,
+} from "antd";
+import { PlusOutlined } from "@ant-design/icons";
+import axios from "axios";
+import ImgCrop from "antd-img-crop";
+import Swal from "sweetalert2";
+import ProductUpload from "./ProductUpload";
+
+const { TextArea } = Input;
+
+function ProductForm() {
+  const [form] = Form.useForm();
+  const [loading, setLoading] = useState(false);
+
+  const normFile = (e) => {
+    if (Array.isArray(e)) {
+      return e;
+    }
+    return e && e.fileList;
+  };
+
+  const onFinish = async (values) => {
+    console.log("values..", values);
+
+    // try {
+    //   // Include the uploaded image(s) in the values object
+    //   values.images = values.images ? values.images.map((file) => file.originFileObj) : [];
+    //   // Send a POST request to your endpoint with the form data
+    //   const response = await axios.post("http://localhost:8000/admin/add-product", values);
+    //   console.log("Product added:", response.data.product);
+    //   message.success("Product added successfully");
+    //   form.resetFields();
+    // } catch (error) {
+    //   console.error("Error adding product:", error);
+    //   message.error("Failed to add product");
+    // } finally {
+    // }
+
+    try {
+      Swal.fire({
+        title: "Are you sure?",
+        text: "Do you want to continue!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, continue!",
+      }).then(async (result) => {
+        if (result.isConfirmed) {
+
+          const formData = new FormData();
+          formData.append("title", values.title);
+          formData.append("videoLink", values.videoLink);
+          formData.append("category", values.category);
+          formData.append("price", values.price);
+          formData.append("description", values.description);
+          formData.append("specification", values.specification);
+          formData.append("featured", values.featured);
+          values.images.forEach((image, index) => {
+            formData.append(`images`, image.originFileObj);
+          });
+
+
+          await axios
+            .post("http://localhost:8000/admin/add-product", formData, {
+              headers: {
+                "Content-Type": "multipart/form-data",
+              },
+            })
+            .then((res) => {
+              console.log("form submitted", res);
+              Swal.fire("Submited!", "success");
+              window.location.reload();
+            });
+
+          // axios
+          //   .post("http://localhost:8000/admin/add-product", formData, {  headers: {
+          //     "Content-Type": "multipart/form-data",
+          //   }, })
+          //   .then((res) => {
+          //     console.log("form submitted", res);
+
+          //     Swal.fire("Submited!", "success");
+
+          //     window.location.reload();
+          //   });
+        }
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  return (
+    <Form
+      form={form}
+      labelCol={{ span: 4 }}
+      wrapperCol={{ span: 14 }}
+      layout="horizontal"
+      style={{ maxWidth: 600 }}
+      onFinish={onFinish}
+    >
+      <Form.Item
+        label="Title"
+        name="title"
+        rules={[{ required: true, message: "Please enter a title" }]}
+      >
+        <Input />
+      </Form.Item>
+
+      <Form.Item label="Video link" name="videoLink">
+        <Input />
+      </Form.Item>
+
+      <Form.Item label="Category" name="category">
+        <Select>
+          <Select.Option value="demo">Demo</Select.Option>
+          <Select.Option value="one">one</Select.Option>
+          <Select.Option value="two">two</Select.Option>
+          <Select.Option value="three">three</Select.Option>
+        </Select>
+      </Form.Item>
+
+      <Form.Item label="Price" name="price">
+        <InputNumber />
+      </Form.Item>
+
+      <Form.Item label="Description" name="description">
+        <TextArea rows={15} />
+      </Form.Item>
+
+      <Form.Item label="Specification" name="specification">
+        <TextArea rows={15} />
+      </Form.Item>
+
+      <Form.Item label="Featured" name="featured" valuePropName="checked">
+        <Switch />
+      </Form.Item>
+
+      <Form.Item
+        label="Upload"
+        name="images"
+        valuePropName="fileList"
+        getValueFromEvent={(e) => normFile(e)}
+      >
+        <Upload listType="picture-card" maxCount={5}>
+          <div>
+            <PlusOutlined />
+            <div style={{ marginTop: 8 }}>Upload</div>
+          </div>
+        </Upload>
+      </Form.Item>
+
+      <Form.Item wrapperCol={{ offset: 4, span: 14 }}>
+        <Button type="primary" htmlType="submit" loading={loading}>
+          Submit
+        </Button>
+      </Form.Item>
+    </Form>
+
+    // <ProductUpload/>
+  );
+}
+
+export default ProductForm;
+//==========================================================================//
+import React, { useEffect, useState } from "react";
+import {
+  Form,
+  Input,
+  Select,
+  InputNumber,
+  Switch,
+  Upload,
+  message,
+  Button,
+} from "antd";
+import { PlusOutlined } from "@ant-design/icons";
+import axios from "axios";
+import ImgCrop from "antd-img-crop";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
+import { GetCategory } from "../../../Apis/AdminApi";
+
+const { TextArea } = Input;
+
+function ProductForm() {
+  const [form] = Form.useForm();
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const [category, setCategory] = useState([]);
+
+  const normFile = (e) => {
+    if (Array.isArray(e)) {
+      return e;
+    }
+    return e && e.fileList;
+  };
+
+  const onFinish = async (values) => {
+    console.log("values..", values);
+    const formData = new FormData();
+    formData.append("title", values.title);
+    formData.append("videoLink", values.videoLink);
+    formData.append("category", values.category);
+    formData.append("price", values.price);
+    formData.append("description", values.description);
+    formData.append("specification", values.specification);
+    formData.append("featured", values.featured);
+    values.images.forEach((image, index) => {
+      formData.append(`images`, image.originFileObj);
+    });
+
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/admin/add-product",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      console.log("response status:", response.status); // Log response status code
+      console.log("response data:", response.data); // Log response data
+      if (response.status === 200) {
+        message.success("New product added");
+        // navigate('/admin/product-details', { replace: true });
+      } else {
+        location.reload();
+      }
+    } catch (error) {
+      console.error("Error adding product:", error);
+      message.error("Failed to add product");
+    } finally {
+      console.log("Finally block executed"); // Log that the finally block was executed
+    }
+  };
+
+  useEffect(() => {
+    GetCategory().then((catagories) => {
+      setCategory(catagories.data);
+      console.log("catagories", catagories);
+    });
+  }, []);
+
+  return (
+    <Form
+      form={form}
+      labelCol={{ span: 4 }}
+      wrapperCol={{ span: 14 }}
+      layout="horizontal"
+      style={{ maxWidth: 600 }}
+      onFinish={onFinish}
+    >
+      <Form.Item
+        label="Title"
+        name="title"
+        rules={[{ required: true, message: "Please enter a title" }]}
+      >
+        <Input />
+      </Form.Item>
+
+      <Form.Item label="Video link" name="videoLink">
+        <Input />
+      </Form.Item>
+
+
+      <Form.Item label="Category" name="category">
+        <Select>
+          {category.map((category, index) => (
+            <Select.Option value={category.name} key={index}>
+              {category.name}
+            </Select.Option>
+          ))}
+        </Select>
+      </Form.Item>
+
+      <Form.Item label="Price" name="price">
+        <InputNumber />
+      </Form.Item>
+
+      <Form.Item label="Description" name="description">
+        <TextArea rows={15} />
+      </Form.Item>
+
+      <Form.Item label="Specification" name="specification">
+        <TextArea rows={15} />
+      </Form.Item>
+
+      <Form.Item label="Featured" name="featured" valuePropName="checked">
+        <Switch />
+      </Form.Item>
+
+      <Form.Item
+        label="Upload"
+        name="images"
+        valuePropName="fileList"
+        getValueFromEvent={(e) => normFile(e)}
+      >
+        <Upload listType="picture-card" maxCount={5}>
+          <div>
+            <PlusOutlined />
+            <div style={{ marginTop: 8 }}>Upload</div>
+          </div>
+        </Upload>
+      </Form.Item>
+
+      <Form.Item wrapperCol={{ offset: 4, span: 14 }}>
+        <Button type="primary" htmlType="submit" loading={loading}>
+          Submit
+        </Button>
+      </Form.Item>
+    </Form>
+  );
+}
+
+export default ProductForm;
+

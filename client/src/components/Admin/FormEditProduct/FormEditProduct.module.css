@@ -1,0 +1,33 @@
+.from_wrapper{
+    /* background-color: rebeccapurple; */
+    width: 100%;
+    padding: 30px;
+
+
+    border: 1px solid rgba(128, 128, 128, 0.286);
+    border-radius: 10px;
+    margin-top: 20px;
+
+    
+  -webkit-box-shadow: 1px 2px 29px 0px rgba(0, 0, 0, 0.047);
+  -moz-box-shadow: 1px 2px 29px 0px rgba(0, 0, 0, 0.047);
+  box-shadow: 1px 2px 29px 0px rgba(0, 0, 0, 0.047);
+  
+/* background-color: aliceblue; */
+
+
+
+}
+.input{
+    border: 1px solid rgb(129, 129, 129);
+     width: 100%;
+     border-radius: 5px;
+     height: 50px;
+     font-size: 20px;
+     font-weight: 400;
+     color: black;
+}
+.label{
+    font-weight: 600;
+
+}

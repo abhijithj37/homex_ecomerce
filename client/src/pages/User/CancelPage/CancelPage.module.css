@@ -1,0 +1,51 @@
+.cancel_page{
+    background-color: rgba(248, 27, 27, 0.805);
+    font-size: 20px;
+    text-align: center;
+    padding: 30px;
+    color: white;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+
+  .order {
+    border: 1px solid white;
+    padding: 10px;
+    line-height: 30px;
+    border-radius: 10px;    font-weight: 500;
+  
+  }
+  .order_id{
+      color: rgb(255, 255, 255);
+      font-weight: 500;
+  }
+  .sucess_txt {
+    font-size: 30px;
+    font-weight: 500;
+  }
+  .back_btn {
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-weight: 400;
+  }
+  .back_btn :hover {
+    background-color: transparent;
+    border: 1px solid rgb(160, 160, 160);
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-weight: 400;
+  }
+  

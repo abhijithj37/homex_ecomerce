@@ -1,0 +1,218 @@
+.banner_container {
+  padding: 40px;
+  height: 700px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.9fr 0.9fr;
+  grid-template-rows: 1fr 0.7fr;
+  grid-template-areas:
+    "banner_one banner_one banner_two banner_three"
+    "banner_one banner_one banner_four banner_four";
+  grid-gap: 1rem;
+  color: white;
+  text-transform: capitalize;
+}
+
+.banner_two {
+  background-color: var(--main-background-color);
+  grid-area: banner_two;
+}
+.banner_three {
+  background-color: var(--main-background-color-gray);
+  grid-area: banner_three;
+}
+.banner_four {
+  background-color: var(--main-background-color-gray);
+  grid-area: banner_four;
+}
+/*========== BANNER ONE ====== */
+.banner_one {
+  background-color: var(--main-background-color);
+  grid-area: banner_one;
+  padding: 30px;
+  text-align: start;
+  overflow: hidden;
+  position: relative;
+}
+.banner_one_text_container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 500px;
+  position: absolute;
+  z-index: 1;
+}
+.banner_one_image {
+  position: absolute;
+  right: 0px;
+  bottom: 0;
+}
+.banner_one_head {
+  font-size: 30px;
+}
+.banner_one_paragraph {
+  font-size: 14px;
+  width: 420px;
+  line-height: 20px;
+}
+.view_more_btn {
+  background-color: var(--main-btn-color);
+  width: 150px;
+  height: 43px;
+  border-radius: 20px;
+  color: white;
+  border-style: none;
+  box-shadow: 0px 5px 40px 1px rgba(0, 0, 0, 0.223);
+  font-weight: lighter;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+}
+.view_more_btn_mobile {
+  display: none;
+}
+.banner_image {
+  width: 230px;
+  position: absolute;
+  right: 0;
+}
+/* ========================= */
+
+.banner_two {
+  position: relative;
+}
+.banner_three {
+  position: relative;
+}
+.banner_four {
+  position: relative;
+}
+
+/* ==============MOBILE=============== */
+@media only screen and (max-width: 900px) {
+  /*========== BANNER ONE ====== */
+
+  .view_more_btn {
+    display: none;
+  }
+  .banner_container {
+    padding: 0px;
+    grid-gap: 0rem;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 510px 4fr 3fr 5fr;
+    grid-template-areas:
+      "banner_one"
+      "banner_two"
+      "banner_three"
+      "banner_four";
+  }
+  .banner_one {
+    padding: 30px;
+    text-align: center;
+    position: unset;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .banner_one_text_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* max-width: 500px; */
+    position: unset;
+    z-index: 1;
+  }
+  .banner_one_paragraph {
+    margin-bottom: 20px;
+  }
+  .banner_one_image {
+    position: unset;
+    width: 230px;
+  }
+  .view_more_btn_mobile {
+    display: block;
+    background-color: var(--main-btn-color);
+    width: 150px;
+    height: 43px;
+    border-radius: 20px;
+    color: white;
+    border-style: none;
+    box-shadow: 0px 5px 40px 1px rgba(0, 0, 0, 0.223);
+    font-weight: lighter;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+    margin-top: 0px;
+  }
+  /* ================== */
+  .banner_two {
+    position: unset;
+    padding: 20px;
+    background-color: var(--main-btn-color);
+    grid-area: banner_two;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .banner_three {
+    position: unset;
+
+    background-color: rgb(112, 111, 113);
+    grid-area: banner_three;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .banner_four {
+    position: unset;
+
+    padding: 20px;
+    background-color: var(--main-background-color-gray);
+    grid-area: banner_four;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .banner_two_text_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .banner_three_text_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .banner_four_text_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .banner_image {
+    width: 230px;
+    position: unset;
+    right: 0;
+  }
+}

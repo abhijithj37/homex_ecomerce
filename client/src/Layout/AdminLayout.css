@@ -1,0 +1,24 @@
+.admin_wrapper{
+    height: 100vh;
+    width: 100vw;
+  
+}
+
+.admin_container{
+    display: flex;
+}
+.AdminSideBar{
+    position: relative;
+    position: fixed;
+    z-index: 1000;
+    
+}
+.admin_dashbaord_outlet{
+width: 100%;
+/* background-color: rgb(128, 136, 136); */
+position: relative;
+margin-left: 55px;
+/* padding: 10px; */
+
+
+}

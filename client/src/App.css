@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&family=Poppins:wght@200;300;400;500;600&display=swap');
+
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+/* Hide scrollbar for Webkit browsers */
+body::-webkit-scrollbar {
+  width: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 200;
+
+  --main-btn-color:rgb(211, 180, 74);
+  --main-background-color:rgb(227, 207, 106);
+  --main-background-color-yellow:rgb(255, 253, 241);
+  --main-background-color-gray:rgb(173, 173, 173);
+  --main-text-color:rgb(211, 180, 74);
+  --main-background-color-light-gray :#F4F4F4;
+
+
+  --admin-main-color:rgb(3, 133, 255);
+
+    --font-weight-heading: 700;
+--margin-top:30px;
+
+
+}
+
+/* text-transform: uppercase; */
+
+
+
+/* styles.css */
+a{
+  text-decoration: none;
+}
+
+.page-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 300ms, transform 300ms;
+}
+
+
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    /* IF I ENNABLE OVERFLOW HIDDEN WHEN PAGE RENDER PAGE WHILL START FROM BOTTOM (SCROLL)  */
+    /* overflow-x: hidden;  */
+}
+
+
+.VIpgJd-ZVi9od-ORHb-OEVmcd{
+  width: 100%;
+  max-width: 400px !important;
+}
+

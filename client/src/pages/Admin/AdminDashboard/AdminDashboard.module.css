@@ -1,0 +1,142 @@
+.dashboar {
+  /* max-width: 1400px; */
+
+ padding-right: 20px;
+
+
+  /* padding-right: 50px; */
+
+  /* background-color: rebeccapurple; */
+}
+
+.head_container_main {
+  font-weight: 700;
+  text-align: center;
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+.head_text {
+  font-size: 21px;
+  color: var(--admin-main-color);
+  background-color: none;
+  width: 300px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  border-radius: 10px;
+
+  -webkit-box-shadow: 1px 2px 29px 0px rgba(0, 0, 0, 0.047);
+  -moz-box-shadow: 1px 2px 29px 0px rgba(0, 0, 0, 0.047);
+  box-shadow: 1px 2px 29px 0px rgba(0, 0, 0, 0.047);
+}
+
+.dashboar_conten {
+  /* background-color: antiquewhite; */
+  width: 100%;
+}
+.overview {
+  font-weight: 600;
+  font-size: 19px;
+  margin-bottom: 10px;
+
+
+}
+.overview_wrap {
+  display: flex;
+  width: 100%;
+  gap: 30px;
+  border: 1px solid rgba(128, 128, 128, 0.237);
+  /* padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 15px;
+  padding-right: 15px; */
+  padding: 10px;
+  border-radius: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  margin-bottom: 30px;
+
+  
+}
+.overview_card {
+  border-radius: 10px;
+  min-height: 100px;
+  padding: 15px;
+
+  -webkit-box-shadow: 1px 2px 29px 0px rgba(0, 0, 0, 0.162);
+  -moz-box-shadow: 1px 2px 29px 0px rgba(0, 0, 0, 0.162);
+  box-shadow: 1px 2px 29px 0px rgba(0, 0, 0, 0.105);
+
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.head_container {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 19px;
+}
+.link {
+  color: var(--admin-main-color);
+  cursor: pointer;
+  text-decoration: none;
+}
+.count {
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.table_containerhome {
+  border: 1px solid rgba(128, 128, 128, 0.237);
+  padding:10px;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 700px) {
+  .head_text {
+    font-size: 17px;
+  }
+  .count {
+    font-size: 25px;
+    font-weight: 600;
+  }
+  .link {
+    font-size: 15px;
+  }
+  .dashboar {
+    padding: 0px;
+
+    padding-right: 70px;
+    
+  }
+  .overview{
+    text-align: center;
+  }
+
+
+  .overview_wrap {
+    flex-direction: column;
+    gap: 14px;
+
+    border: none;
+  }
+  .overview_card {
+    padding: 13px;
+    width: 90%;
+  }
+
+
+}

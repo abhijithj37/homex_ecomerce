@@ -1,0 +1,26 @@
+.UserLayout {
+  width: 100%;
+  margin: auto;
+}
+.nav_container {
+  position: fixed;
+  top: 0;
+  width: inherit;
+  z-index: 1000;
+  /* background-color: rgb(0, 77, 51); */
+}
+.UserLayout_oulet {
+  max-width: 1700px;
+  margin: auto;
+  margin-top: 130px;
+  /* background-color: blue; */
+}
+
+@media (max-width: 768px) {
+  .UserLayout_oulet {
+    margin-top: 100px;
+    
+    /* background-color: blue; */
+  }
+}
+
